@@ -19,6 +19,7 @@ public:
     tree *minimum(tree *root);
     tree *maximum(tree *root);
     tree *insertion(tree* root, int x);
+    tree *insertionWithLinkingTree(tree **root, int x, tree *parent);
 };
 
 

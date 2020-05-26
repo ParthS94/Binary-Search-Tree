@@ -3,7 +3,6 @@
 //
 
 #include "BST.h"
-#include <iostream>
 #include <cstdlib>
 
 using namespace std;
@@ -57,4 +56,23 @@ tree* BST::insertion(tree *root, int x){
         root->right = insertion(root->right, x);
     }
     return root;
+}
+
+tree* BST::insertionWithLinkingTree(tree **root, int x, tree *parent){
+    tree *newNode;
+    if (*root == nullptr){
+        newNode = static_cast<tree *>(malloc(sizeof(tree)));
+        newNode->key_value = x;
+        newNode->left = nullptr;
+        newNode->right = nullptr;
+        newNode->parent = parent;
+        *root = newNode;
+        return newNode;
+    }
+    if(x < (*root)->key_value){
+        return insertionWithLinkingTree(&((*root)->left), x, *root);
+    }
+    else{
+        return insertionWithLinkingTree(&((*root)->right), x, *root);
+    }
 }
