@@ -16,7 +16,9 @@ struct tree //Since each left and right sub trees are trees as well
 class BST {
 public:
     tree* root;
-    tree* searchTree(tree *t, int x);
+    tree* searchTree(tree *root, int x);
+    tree *minimum(tree *root);
+    tree *maximum(tree *root);
 };
 
 
