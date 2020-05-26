@@ -5,7 +5,7 @@
 #ifndef BINARYSEARCHTREE_BST_H
 #define BINARYSEARCHTREE_BST_H
 
-struct tree //Since each left and right sub trees are trees as well
+struct tree //Since each left and right sub trees are BST trees as well
 {
     int key_value;
     struct tree *left;
@@ -15,10 +15,10 @@ struct tree //Since each left and right sub trees are trees as well
 
 class BST {
 public:
-    tree* root;
     tree* searchTree(tree *root, int x);
     tree *minimum(tree *root);
     tree *maximum(tree *root);
+    tree *insertion(tree* root, int x);
 };
 
 
