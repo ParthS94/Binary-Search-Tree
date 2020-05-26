@@ -5,16 +5,18 @@
 #ifndef BINARYSEARCHTREE_BST_H
 #define BINARYSEARCHTREE_BST_H
 
-struct node
+struct tree //Since each left and right sub trees are trees as well
 {
     int key_value;
-    struct node *p_left;
-    struct node *p_right;
+    struct tree *left;
+    struct tree *right;
+    struct tree *parent;
 };
 
 class BST {
 public:
-    node* root
+    tree* root;
+    tree* searchTree(tree *t, int x);
 };
 
 
